@@ -26,9 +26,9 @@ that you can collect to get more points.
 
 Download the following three images into your project directory:
 
-- [glider_left.png](../glider_left.png) ![Glider facing left](../glider_left.png)
-- [glider_right.png](../glider_right.png) ![Glider facing right](../glider_right.png)
-- [vent.png](../vent.png) ![Vent](../vent.png)
+- [glider_left.png](https://github.com/aijaz/glider/blob/main/glider_left.png) ![Glider facing left](https://github.com/aijaz/glider/blob/main/glider_left.png)
+- [glider_right.png](https://github.com/aijaz/glider/blob/main/glider_right.png) ![Glider facing right](https://github.com/aijaz/glider/blob/main/glider_right.png)
+- [vent.png](https://github.com/aijaz/glider/blob/main/vent.png) ![Vent](https://github.com/aijaz/glider/blob/main/vent.png)
 
 ## 1.3 Create the first version of your app
 
