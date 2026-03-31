@@ -132,7 +132,7 @@ Run the app. If you get any errors, ask for help.
 You should see a screen like this:
 <img alt='1.png' width=696 height=430 src="1.png">
 
-You can find the full file as it's supposed to look at the end of this step [here](1.py).
+You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/1.py).
 
 # 2 Working With Textures
 
@@ -165,7 +165,7 @@ This instructs arcade to associate 2 textures with the `self.glider` sprite.
 The first texture (the one facing right) is number `0` and the second is number 
 `1`.
 
-## 2.3 Respond to key presses. 
+## 2.3 Respond to key presses.
 
 Add the following simple implementation of `on_key_press` to the bottom
 of your GameView class definition (after the `on_draw` method). 
@@ -209,7 +209,7 @@ Finally, add this line to the bottom of `GameView.__init__`. It will define the
 Now, when you run the program the glider will change direction depending on 
 which arrow key you press. 
 
-You can find the full file as it's supposed to look at the end of this step [here](2.py).
+You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/2.py).
 
 # 3 Creating our first vent
 
@@ -244,7 +244,7 @@ Add the following to the bottom of `GameView.on_draw`
 You should see a screen like this:
 <img alt='3.png' width=696 height=430 src="3.png">
 
-You can find the full file as it's supposed to look at the end of this step [here](3.py).
+You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/3.py).
 
 # 4 Our First Obstacle - The Dreaded Floor
 
@@ -285,7 +285,7 @@ Add the following to the bottom of `GameView.on_draw`
 You should see a screen like this:
 <img alt='4.png' width=696 height=430 src="4.png">
 
-You can find the full file as it's supposed to look at the end of this step [here](4.py).
+You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/4.py).
 
 # 5 Using a Physics Engine
 
@@ -328,7 +328,7 @@ As you can see, gravity is the only force acting on our glider right now,
 and the glider has no horizontal velocity, so it falls straight down, through the floor.
 We'll fix this soon. 
 
-You can find the full file as it's supposed to look at the end of this step [here](5.py).
+You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/5.py).
 
 # 6 Check for Collisions
 
@@ -442,7 +442,7 @@ So, after this, `GameView.on_update` should look like this:
 Now that this is done, you should see that the glider falls 3 times, and then 
 the game is over.
 
-You can find the full file as it's supposed to look at the end of this step [here](6.py).
+You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/6.py).
 
 # 7 Moving Forward
 
@@ -458,7 +458,7 @@ in `GameView.setup_level()`. That's it:
         self.glider.change_x = 3
         self.glider.change_y = 0
 ```
-You can find the full file as it's supposed to look at the end of this step [here](7.py).
+You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/7.py).
 
 # 8 Cleaning up the Visuals
 
@@ -515,7 +515,7 @@ So now, the `__init__` method should look like this:
         self.lives = None
 ```
 
-You can find the full file as it's supposed to look at the end of this step [here](8.py).
+You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/8.py).
 
 # 9 Interacting with the Vents
 
@@ -635,7 +635,7 @@ Add the following to to bottom on `GameView.on_update`
                 self.glider.set_texture(0)
 ```
 
-You can find the full file as it's supposed to look at the end of this step [here](9.py).
+You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/9.py).
 
 # 10 Slowing down the oscillation
 
@@ -682,7 +682,7 @@ to
 ```
 Now the direction change is a lot slower.
 
-You can find the full file as it's supposed to look at the end of this step [here](10.py).
+You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/10.py).
 
 # 11 Coins
 
@@ -756,7 +756,7 @@ And then define the `print_score` function near the bottom of your file:
                            anchor_x='right')
         batch.draw()
 ```
-You can find the full file as it's supposed to look at the end of this step [here](11.py).
+You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/11.py).
 
 # 12 Obstacles
 Let's add an obstacle that the user has to get around (or over). Add the following code to the bottom of `GameView.setup_level`
@@ -804,7 +804,7 @@ Now, update lose_life to this:
             arcade.sound.play_sound(self.life_sound)
             self.setup_level()
 ```
-You can find the full file as it's supposed to look at the end of this step [here](12.py).
+You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/12.py).
 
 
 # 13 Levels
@@ -865,7 +865,7 @@ use the `.get` method of a dictionary which returns the specified
 default value (or `None`) if the key isn't in the 
 dictionary.
 
-## 13.2 Creating the Instance Variables for the Levels and the Current Level 
+## 13.2 Creating the Instance Variables for the Levels and the Current Level
 Add the following code to the bottom of `GameView.__init__`
 ```python
 
@@ -1012,7 +1012,7 @@ Replace `print_score` with this:
         batch.draw()
 ```
 
-You can find the full file as it's supposed to look at the end of this step [here](13.py).
+You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/13.py).
 
 # 14 Startup and Game Over Views
 The game almost looks like a real game, but it's missing a key part: Screens for start-up, 
@@ -1153,7 +1153,7 @@ And update `GameView.you_won` to:
         you_won_view = YouWonView()
         self.window.show_view(you_won_view)
 ```
-You can find the full file as it's supposed to look at the end of this step [here](14.py).
+You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/14.py).
 
 # 15 Spinners
 Obstacles don't have to be static. Like any good platformer game, we can have 
@@ -1210,7 +1210,7 @@ do anything there:
 ```
 Now, when we run our game, level 4 has a spinner.
 
-You can find the full file as it's supposed to look at the end of this step [here](15.py).
+You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/15.py).
 
 # 16 Refactoring our Views
 
@@ -1306,7 +1306,7 @@ Finally, change `you_won` to look like this:
                                 arcade.color.DARK_SLATE_BLUE)
         self.window.show_view(you_won_view)
 ```
-You can find the full file as it's supposed to look at the end of this step [here](16.py).
+You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/16.py).
 
 #17 Where To Go From Here
 
