@@ -339,7 +339,7 @@ class GameView(arcade.View):
                 "glider_y": 500,
                 "vent_x": [300, 850],
                 "coin_xy": [(384, 300), (640, 350), (900, 500)],
-                "shelf_xywh": [(800, 400, 400, 4)],
+                "shelf_xywh": [(600, 400, 200, 4)],
                 "drawings_xywh": [(800, 230, 2, 340)],
             },
             {
