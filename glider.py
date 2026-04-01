@@ -129,6 +129,7 @@ class GameView(arcade.View):
         # Draw drawings
         self.drawings.draw()
 
+
         # Draw vents
         self.vents.draw()
 
@@ -249,7 +250,9 @@ class GameView(arcade.View):
             self.setup_level()
 
     def game_over(self):
-        game_over_view = GameOverView()
+        game_over_view = TextView("Game Over",
+                                  "Press Any Key to Restart",
+                                  arcade.color.DARK_MIDNIGHT_BLUE)
         self.window.show_view(game_over_view)
 
     def setup_level(self):
@@ -346,7 +349,7 @@ class GameView(arcade.View):
                 "vent_x": [300, 850],
                 "coin_xy": [(384, 300), (640, 350), (900, 500)],
                 "shelf_xywh": [(600, 400, 200, 4)],
-                "drawing_xywh": [(800, 230, 2, 340)],
+                "drawing_xywh": [(600, 230, 2, 340)],
             },
             {
                 "glider_y": 500,
@@ -366,111 +369,59 @@ class GameView(arcade.View):
         self.setup_level()
 
     def you_won(self):
-        you_won_view = YouWonView()
+        you_won_view = TextView("You Made It!",
+                                "Press Any Key to Restart",
+                                arcade.color.DARK_SLATE_BLUE)
         self.window.show_view(you_won_view)
 
 
-class StartupView(arcade.View):
-  def on_show_view(self):
-    """ This is run once when we switch to this view """
-    self.window.background_color = arcade.color.DARK_CHESTNUT
+class TextView(arcade.View):
+    def __init__(self, line1, line2, bg_color):
+        super().__init__()
+        self.line1 = line1
+        self.line2 = line2
+        self.bg_color = bg_color
 
-  def on_draw(self):
-    """ Draw this view """
-    self.clear()
-    batch = Batch()
-    text_1 = arcade.Text("Welcome to GliderJETS!",
-                         self.window.width / 2,
-                         self.window.height / 2,
-                         batch=batch,
-                         color=arcade.color.WHITE,
-                         font_size=50,
-                         anchor_x='center')
+    def on_show_view(self):
+        """ This is run once when we switch to this view """
+        self.window.background_color = self.bg_color
 
-    text_2 = arcade.Text("Press any Key to Start",
-                         self.window.width / 2,
-                         self.window.height / 2 - 75,
-                         batch=batch,
-                         color=arcade.color.WHITE,
-                         font_size=50,
-                         anchor_x='center')
+    def on_draw(self):
+        """ Draw this view """
+        self.clear()
+        batch = Batch()
+        text_1 = arcade.Text(self.line1,
+                             self.window.width / 2,
+                             self.window.height / 2,
+                             batch=batch,
+                             color=arcade.color.WHITE,
+                             font_size=50,
+                             anchor_x='center')
 
-    batch.draw()
+        text_2 = arcade.Text(self.line2,
+                             self.window.width / 2,
+                             self.window.height / 2 - 75,
+                             batch=batch,
+                             color=arcade.color.WHITE,
+                             font_size=50,
+                             anchor_x='center')
 
-  def on_key_press(self, symbol, modifiers):
-    """ If the user presses the mouse button, start the game. """
-    start_view = GameView()
-    start_view.setup()
-    start_view.setup_level()
-    self.window.show_view(start_view)
+        batch.draw()
 
-
-class GameOverView(arcade.View):
-  def on_show_view(self):
-    """ This is run once when we switch to this view """
-    self.window.background_color = arcade.csscolor.DARK_SLATE_BLUE
-
-  def on_draw(self):
-    """ Draw this view """
-    self.clear()
-    batch = Batch()
-    text_1 = arcade.Text("Game Over",
-                         self.window.width / 2,
-                         self.window.height / 2,
-                         batch=batch,
-                         color=arcade.color.WHITE,
-                         font_size=50,
-                         anchor_x='center')
-
-    text_2 = arcade.Text("Press any Key to Restart",
-                         self.window.width / 2,
-                         self.window.height / 2 - 75,
-                         batch=batch,
-                         color=arcade.color.WHITE,
-                         font_size=50,
-                         anchor_x='center')
-
-    batch.draw()
-
-  def on_key_press(self, symbol, modifiers):
-    """ If the user presses the mouse button, start the game. """
-    start_view = GameView()
-    start_view.setup()
-    start_view.setup_level()
-    self.window.show_view(start_view)
-
-
-class YouWonView(arcade.View):
-  def on_show_view(self):
-    """ This is run once when we switch to this view """
-    self.window.background_color = arcade.csscolor.DARK_SLATE_BLUE
-
-  def on_draw(self):
-    """ Draw this view """
-    self.clear()
-    batch = Batch()
-    text_1 = arcade.Text("You Made It!",
-                         self.window.width / 2,
-                         self.window.height / 2,
-                         batch=batch,
-                         color=arcade.color.WHITE,
-                         font_size=50,
-                         anchor_x='center')
-
-    batch.draw()
-
-  def on_key_press(self, symbol, modifiers):
-    """ If the user presses the mouse button, start the game. """
-    start_view = GameView()
-    start_view.setup()
-    start_view.setup_level()
-    self.window.show_view(start_view)
-
+    def on_key_press(self, symbol, modifiers):
+        """ If the user presses the mouse button, start the game. """
+        start_view = GameView()
+        start_view.setup()
+        start_view.setup_level()
+        self.window.show_view(start_view)
 
 def main():
     """ Main function """
     window = arcade.Window(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE)
-    start_view = StartupView()
+    start_view = TextView("Welcome to GliderJETS",
+                          "Press Any Key To Start",
+                          arcade.color.DARK_CANDY_APPLE_RED
+                          )
     window.show_view(start_view)
     arcade.run()
 

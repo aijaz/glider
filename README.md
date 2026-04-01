@@ -876,6 +876,7 @@ Add the following code to the bottom of `GameView.__init__`
         self.levels = self.get_levels()
 ```
 ## 13.3 Building the Current Level
+
 Now we need to build the level. We're going to do this in the `setup_level` method. 
 First, we need to delete all the lines that we currently have in `setup_level`, and
 replace them with:
@@ -969,6 +970,37 @@ to
 
         # add the floor to the obstacles list
         self.obstacles.append(self.floor)
+```
+Now, replace `on_draw` to look like this. We're drawing the sprites in order
+from 'back' to 'front', so that the glider is always in front of everything else.
+```python
+    def on_draw(self):
+        """Render the screen."""
+
+        # Clear the screen to the background color
+        self.clear()
+        
+        # Draw images
+        self.images.draw()
+        
+        # Draw drawings
+        self.drawings.draw()
+
+
+        # Draw vents
+        self.vents.draw()
+
+        # Draw obstacles
+        self.obstacles.draw()
+
+        # Draw coins
+        self.coins.draw()
+
+        # Draw our sprites
+        arcade.draw_sprite(self.glider)
+
+        # print the score
+        self.print_score()
 ```
 If you run the game now, you'll see that you can complete the level, but it doesn't 
 take you to the next level. Let's address that now. 

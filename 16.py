@@ -123,8 +123,11 @@ class GameView(arcade.View):
         # Clear the screen to the background color
         self.clear()
 
-        # Draw our sprites
-        arcade.draw_sprite(self.glider)
+        # Draw images
+        self.images.draw()
+
+        # Draw drawings
+        self.drawings.draw()
 
         # Draw vents
         self.vents.draw()
@@ -134,6 +137,9 @@ class GameView(arcade.View):
 
         # Draw coins
         self.coins.draw()
+
+        # Draw our sprites
+        arcade.draw_sprite(self.glider)
 
         # print the score
         self.print_score()
@@ -328,7 +334,7 @@ class GameView(arcade.View):
                 "vent_x": [650, 950],
                 "coin_xy": [(384, 300), (640, 350), (900, 500)],
                 "shelf_xywh": [],
-                "drawings_xywh": [],
+                "drawing_xywh": [],
                 "images_xyp": []
             },
             {
@@ -342,7 +348,7 @@ class GameView(arcade.View):
                 "vent_x": [300, 850],
                 "coin_xy": [(384, 300), (640, 350), (900, 500)],
                 "shelf_xywh": [(600, 400, 200, 4)],
-                "drawings_xywh": [(800, 230, 2, 340)],
+                "drawing_xywh": [(800, 230, 2, 340)],
             },
             {
                 "glider_y": 500,
