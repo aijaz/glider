@@ -730,7 +730,9 @@ Add the following code to the bottom of `GameView.on_update`
             coin.remove_from_sprite_lists()
             self.score += 100
 ```
- ## Print the score
+
+## Print the score
+
 Add the following import near the top of your file:
 ```python
 from pyglet.graphics import Batch
@@ -1340,7 +1342,7 @@ Finally, change `you_won` to look like this:
 ```
 You can find the full file as it's supposed to look at the end of this step [here](https://github.com/aijaz/glider/blob/main/16.py).
 
-#17 Where To Go From Here
+# 17 Where To Go From Here
 
 Event though this seems like a large program, it's not that large - it's less than 450 
 lines of code. There's a lot you can (and should) do now:
@@ -1354,3 +1356,70 @@ lines of code. There's a lot you can (and should) do now:
 - Share levels with your friends. 
 
 Most importantly, have fun!
+
+```text
+# Slides
+- D: Hello!
+- D: Dex
+- N: Nathaneal
+- Z: Nzube
+- Z: De'Mykal
+- Z: Computer Science
+- Z: Aijaz and Aniket
+- 
+- 
+- D: Theme - Aviation
+- D: Objects behave in the air
+- D: Airplane 
+- D: Simple
+- D: Basketball game
+- D: What we had to learn
+- D: Python
+- D: Data Structures
+- D: Conditionals and other control structures
+- D: Functions
+- D: Packages
+- D: Built-in (Turtle)
+- D: Third Party (Arcade)
+- D: Arcade
+- D: Game library
+- D: Sprites
+- D: Objects that interact with each other
+- D: Angle
+- D: Velocity
+- D: Demo
+- 
+- N: SLOW
+- N: Computers are slow
+- N: We had to code EVERYTHING
+- N: Check for collisions
+- N: Implement the force of gravity
+- N: y = ut+1/2at2
+- N: Newton's laws of physics (image)
+- N: Physics Engine
+- N: Demo of classic game
+- 
+- Z: In order to do this
+- Z: Create Graphics
+- Z: Drawing a simple level - no movement
+- Z: Respond to key press
+- Z: Applying Gravity
+- Z: Applying external forces to counteract gravity 
+- Z: Obstacles and collisions
+- Z: The concept of a life/respawning
+- Z: Coins
+- Z: Adding multiple levels
+- Z: Demo
+
+- D: Enhancements
+- D: New forces
+- D: New levels
+- D: Non-linear motion
+- D: Background music
+- D: Level designer
+- D: Tournaments
+- D: Custom Graphics
+
+- N: Thank you to JETS
+- Z: Stop by 
+```
