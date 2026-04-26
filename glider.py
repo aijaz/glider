@@ -145,6 +145,9 @@ class GameView(arcade.View):
         # print the score
         self.print_score()
 
+        # self.obstacles.draw_hit_boxes()
+        # self.glider.draw_hit_box()
+
     def on_key_press(self, symbol, modifiers):
         if symbol == arcade.key.LEFT and self.currently_over_vent:
             # only handle the press of the LEFT arrow key if the glider is over a vent
@@ -277,7 +280,7 @@ class GameView(arcade.View):
         self.glider.center_y = data.get("glider_y", 600)  # default center_y is 600
 
         # create the images first, since they're in the background
-        for x, y, p in data.get("shelf_xyp", []):  # if this key is not present, iterate over an empty list
+        for x, y, p in data.get("images_xyp", []):  # if this key is not present, iterate over an empty list
             image = arcade.Sprite(p)
             image.center_x = x
             image.center_y = y
@@ -300,6 +303,13 @@ class GameView(arcade.View):
         for x, y, w, h in data.get("shelf_xywh", []):
             shelf = arcade.SpriteSolidColor(w, h, x, y, arcade.color.BLACK)
             self.obstacles.append(shelf)   # append each shelf to the shelf sprite list
+
+        for x, y, p in data.get("obstacles_xyp", []):  # if this key is not present, iterate over an empty list
+            t = arcade.load_texture(p, hit_box_algorithm=arcade.hitbox.algo_detailed)
+            obstacle = arcade.Sprite(t)
+            obstacle.center_x = x
+            obstacle.center_y = y
+            self.obstacles.append(obstacle)   # append each image to the image sprite list
 
         for x, y, w, h in data.get("drawing_xywh", []):
             drawing = arcade.SpriteSolidColor(w, h, x, y, arcade.color.BLACK)
@@ -336,13 +346,14 @@ class GameView(arcade.View):
                 "coin_xy": [(384, 300), (640, 350), (900, 500)],
                 "shelf_xywh": [],
                 "drawing_xywh": [],
-                "images_xyp": []
+                "images_xyp": [(WINDOW_WIDTH/2, WINDOW_HEIGHT/2, 'classroom.png')]
             },
             {
                 "glider_y": 200,
                 "vent_x": [150, 950],
                 "coin_xy": [],
                 "shelf_xywh": [],
+                "images_xyp": [(WINDOW_WIDTH/2, WINDOW_HEIGHT/2, 'office.png')]
             },
             {
                 "glider_y": 500,
@@ -357,6 +368,14 @@ class GameView(arcade.View):
                 "coin_xy": [(384, 300), (640, 350), (900, 500)],
                 "shelf_xywh": [],
                 "spinner_xywh": [(800, 300, 400, 8)]
+            },
+            {
+                "glider_y": 500,
+                "vent_x": [400],
+                "coin_xy": [(384, 300), (640, 350), (900, 500)],
+                "shelf_xywh": [],
+                "drawing_xywh": [],
+                "obstacles_xyp": [(600, 300, 'db2.png')]
             },
         ]
 
